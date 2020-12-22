@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '6.x'
+env:
+  APP_ENV: test
+
+jobs:
+  symfony:
+    name: Laravel 6 (PHP ${{ matrix.php-versions }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php-versions: ['7.3', '7.4', '8.0']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Setup PHP with extensions and Composer v2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          tools: composer:v2
+          extensions: ctype, iconv, intl, json, mbstring, pdo, pdo_sqlite
+        env:
+          update: true
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2.1.3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-${{ matrix.php-versions }}-composer-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.php-versions }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer update --no-progress
+
+      - name: Run functional tests
+        run: |
+          cp .env.testing .env
+          php artisan config:cache
+          touch database/database.sqlite
+          php artisan migrate --seed --env=testing --force
+          vendor/bin/codecept run Functional

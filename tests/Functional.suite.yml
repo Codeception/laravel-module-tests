@@ -1,0 +1,6 @@
+class_name: FunctionalTester
+modules:
+  enabled:
+    - Asserts
+    - Laravel:
+        environment_file: .env.testing

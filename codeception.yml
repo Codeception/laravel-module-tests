@@ -1,0 +1,17 @@
+namespace: Tests
+paths:
+  tests: tests
+  support: tests/_build/support
+  data: tests/_build/data
+  envs: tests/_build/envs
+  output: tests/_build/output
+actor_suffix: Tester
+extensions:
+  enabled:
+    - Codeception\Extension\RunFailed
+params:
+  - .env.testing
+settings:
+  shuffle: true
+  colors: true
+  report_useless_tests: true

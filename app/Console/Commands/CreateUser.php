@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Console\Commands;
 
-use App\Models\User;
+use App\Repository\UserRepositoryInterface;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Hashing\Hasher;
 
 final class CreateUser extends Command
 {
@@ -22,12 +21,12 @@ final class CreateUser extends Command
         $email = $this->argument('Email');
         $password = $this->argument('Password');
 
-        $hasher = app()->get(Hasher::class);
+        $userRepository = app()->get(UserRepositoryInterface::class);
 
-        User::factory()->createOne([
+        $userRepository->create([
             'name' => $name,
             'email' => $email,
-            'password' => $hasher->make($password)
+            'password' => $password
         ]);
 
         $this->line('User created!');

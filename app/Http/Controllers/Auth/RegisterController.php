@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\AbstractController;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use App\Repository\UserRepositoryInterface;
 use Illuminate\Contracts\Validation\Factory as Validation;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -35,7 +36,8 @@ final class RegisterController extends AbstractController
 
     protected function create(array $data): User
     {
-        return factory(User::class)->create([
+        $userRepository = app()->get(UserRepositoryInterface::class);
+        return $userRepository->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password']

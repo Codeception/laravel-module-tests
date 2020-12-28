@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Functional;
 
 use App\Events\TestEvent;
-use App\Http\Controllers\TestController;
 use App\Models\User;
+use App\Repository\UserRepositoryInterface;
 use App\Utils\Contracts\StringConverterInterface;
 use App\Utils\Repeat;
 use App\Utils\ToUppercase;
@@ -19,8 +19,9 @@ final class LaravelModuleCest
 {
     public function amLoggedAs(FunctionalTester $I)
     {
+        $userRepository = app()->get(UserRepositoryInterface::class);
         /** @var array $user */
-        $user = factory(User::class)->create();
+        $user = $userRepository->create();
         $I->amLoggedAs($user);
         $I->amOnPage('/home');
         $I->see('You are logged in!');
@@ -85,8 +86,9 @@ final class LaravelModuleCest
 
     public function disableModelEvents(FunctionalTester $I)
     {
+        $userRepository = app()->get(UserRepositoryInterface::class);
         /** @var User $user */
-        $user = factory(User::class)->create([
+        $user = $userRepository->create([
             'email' => 'john_doe@original.com',
             'password' => 'password',
         ]);
@@ -366,7 +368,8 @@ final class LaravelModuleCest
 
     public function seeRecord(FunctionalTester $I)
     {
-        factory(User::class)->create([
+        $userRepository = app()->get(UserRepositoryInterface::class);
+        $userRepository->create([
             'email' => 'jane_doe@gmail.com',
             'password' => '123456'
         ]);

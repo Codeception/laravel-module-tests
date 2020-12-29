@@ -9,9 +9,7 @@ use Illuminate\Support\Str;
 
 // Model Factories
 
-/** @var Factory $factory */
-
-$factory->define(User::class, function (Faker $faker) {
+$attributes = function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -19,4 +17,10 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => 'secret',
         'remember_token' => Str::random(10),
     ];
-});
+};
+
+/** @var Factory $factory */
+
+$factory->define(User::class, $attributes);
+
+$factory->defineAs(User::class, 'admin', $attributes);

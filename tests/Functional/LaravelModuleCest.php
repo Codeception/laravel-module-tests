@@ -13,6 +13,7 @@ use App\Utils\Repeat;
 use App\Utils\ToUppercase;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Application;
 use Tests\FunctionalTester;
 
@@ -38,7 +39,8 @@ final class LaravelModuleCest
 
     public function amOnRoute(FunctionalTester $I)
     {
-        // TODO
+        $I->amOnRoute('test-value');
+        $I->see('Test value is');
     }
 
     public function callArtisan(FunctionalTester $I)
@@ -183,7 +185,10 @@ final class LaravelModuleCest
 
     public function have(FunctionalTester $I)
     {
-        // TODO
+        $user = $I->have(User::class, ['email' => 'johndoe@example.com']);
+
+        $I->assertEquals('johndoe@example.com', $user->email);
+        $I->seeRecord('users', ['email' => 'johndoe@example.com']);
     }
 
     public function haveApplicationHandler(FunctionalTester $I)
@@ -231,7 +236,9 @@ final class LaravelModuleCest
 
     public function haveMultiple(FunctionalTester $I)
     {
-        // TODO
+        $I->haveMultiple(User::class, 3);
+
+        $I->seeNumRecords(4, User::class);
     }
 
     public function haveRecord(FunctionalTester $I)
@@ -269,12 +276,18 @@ final class LaravelModuleCest
 
     public function make(FunctionalTester $I)
     {
-        // TODO
+        /** @var Collection $collection */
+        $collection = $I->make(User::class, ['email' => 'johndoe@example.com']);
+
+        $I->assertInstanceOf(User::class, $collection->first());
     }
 
     public function makeMultiple(FunctionalTester $I)
     {
-        // TODO
+        /** @var Collection $collection */
+        $collection = $I->makeMultiple(User::class, 3);
+
+        $I->assertSame(3, $collection->count());
     }
 
     public function seeAuthentication(FunctionalTester $I)

@@ -4,7 +4,17 @@
 
 Minimal site containing functional tests for [Codeception Module Laravel](https://github.com/Codeception/module-laravel).
 
-## Installation
+## Usage
+
+The main purpose of this project is to verify the proper functioning of the `Codeception Module Laravel` in a minimal Laravel installation.
+
+You can use it to contribute new features or propose changes in the module and verify that nothing is broken in the process.
+If that's your goal, be sure to follow [the contribution guides](https://github.com/Codeception/module-laravel/blob/main/CONTRIBUTING.md) for the module.
+
+You can also **fork it** and use it to reproduce a bug or unexpected behavior for analysis.
+If that's your case, just add a link to your fork next to the description of your issue in the module's repository.
+
+Lastly, if you just want to see the module in action and run the tests yourself on your local machine just:
 
 1. Clone the repo:
    ```shell
@@ -21,7 +31,7 @@ Minimal site containing functional tests for [Codeception Module Laravel](https:
    php artisan migrate --seed
    ```
 
-## Usage
+Then, go to the project directory and run:
 
 ```shell
 vendor/bin/codecept run Functional

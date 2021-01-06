@@ -1,5 +1,5 @@
 {
-    "name": "tavoniievez/symfony-module-tests",
+    "name": "codeception/laravel-module-tests",
     "description": "Codeception Laravel Module tests",
     "type": "project",
     "license": "MIT",
@@ -64,10 +64,12 @@
             "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.testing', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
+            "@php -r \"fopen('database/database.sqlite', 'w');\"",
+            "@php artisan key:generate --ansi",
+            "@php artisan migrate --seed"
         ]
     }
 }

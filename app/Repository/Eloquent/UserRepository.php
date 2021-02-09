@@ -6,16 +6,16 @@ namespace App\Repository\Eloquent;
 
 use App\Models\User;
 use App\Repository\UserRepositoryInterface;
-use Illuminate\Database\Eloquent\Model;
 
 final class UserRepository implements UserRepositoryInterface
 {
-    /**
-     * @param array $attributes
-     * @return User
-     */
-    public function create(array $attributes = []): Model
+    public function create(array $attributes = []): User
     {
         return factory(User::class)->create($attributes);
+    }
+
+    public function save(User $user): void
+    {
+        $user->save();
     }
 }

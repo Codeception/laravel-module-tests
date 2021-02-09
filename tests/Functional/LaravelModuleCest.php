@@ -22,7 +22,6 @@ final class LaravelModuleCest
     public function amLoggedAs(FunctionalTester $I)
     {
         $userRepository = app()->get(UserRepositoryInterface::class);
-        /** @var array $user */
         $user = $userRepository->create();
         $I->amLoggedAs($user);
         $I->amOnPage('/home');
@@ -90,7 +89,6 @@ final class LaravelModuleCest
     public function disableModelEvents(FunctionalTester $I)
     {
         $userRepository = app()->get(UserRepositoryInterface::class);
-        /** @var User $user */
         $user = $userRepository->create([
             'email' => 'john_doe@original.com',
             'password' => 'password',
@@ -103,7 +101,7 @@ final class LaravelModuleCest
         $I->disableModelEvents();
 
         $user->setEmail('john_doe@updated.com');
-        $user->save();
+        $userRepository->save($user);
 
         $I->seeRecord(User::class, ['email' => 'john_doe@updated.com']);
     }

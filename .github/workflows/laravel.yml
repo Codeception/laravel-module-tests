@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - '6.x'
+  pull_request:
+    branches:
+      - '6.x'
+
 env:
   APP_ENV: test
 

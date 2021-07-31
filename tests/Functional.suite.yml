@@ -4,3 +4,4 @@ modules:
     - Asserts
     - Laravel:
         environment_file: .env.testing
+    - \Tests\Helper\CustomRequests

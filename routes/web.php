@@ -23,3 +23,5 @@ Route::get('/test-value', [TestController::class, 'testValue'])->name('test-valu
 Route::get('/service-container',  function () {
     return view('utils/service-container');
 });
+
+Route::post('/upload-files', [TestController::class, 'uploadFiles']);

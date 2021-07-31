@@ -16,7 +16,7 @@ final class IssuesCest
      * @dataProvider fileProvider
      * @see https://github.com/Codeception/Codeception/pull/3417
      */
-    public function submitArrayTestFiles(FunctionalTester $I, Example $example): void
+    public function submitArrayTestFiles(FunctionalTester $I, Example $example)
     {
         $fileName = self::TEST_UPLOADED_FILE_NAME;
         $filePath = codecept_data_dir($fileName);
@@ -30,7 +30,6 @@ final class IssuesCest
             ]
         ];
         $response = $I->submitFiles($files);
-        codecept_debug($response);
         $I->assertEquals($example['expected_response'], $response);
     }
 
@@ -38,7 +37,7 @@ final class IssuesCest
      * @dataProvider fileProvider
      * @see https://github.com/Codeception/Codeception/pull/3417
      */
-    public function submitUploadedFileTestFiles(FunctionalTester $I, Example $example): void
+    public function submitUploadedFileTestFiles(FunctionalTester $I, Example $example)
     {
         $fileName = self::TEST_UPLOADED_FILE_NAME;
         $filePath = codecept_data_dir($fileName);
@@ -52,8 +51,7 @@ final class IssuesCest
                 )
         ];
         $response = $I->submitFiles($files);
-        codecept_debug($response);
-        $I->assertEquals($example['expected_response'], $response);
+        $I->assertSame($example['expected_response'], $response);
     }
 
     private function fileProvider(): array

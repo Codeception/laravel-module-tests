@@ -7,7 +7,7 @@ namespace Tests\Helper;
 use Codeception\Module;
 use Codeception\Module\Laravel;
 
-class CustomRequests extends Module
+final class CustomRequests extends Module
 {
     public function submitFiles(array $files): array
     {

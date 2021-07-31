@@ -56,10 +56,7 @@ final class IssuesCest
         $I->assertEquals($example['expected_response'], $response);
     }
 
-    /**
-     * @return array
-     */
-    protected function fileProvider(): array
+    private function fileProvider(): array
     {
         return [
             [

@@ -16,6 +16,8 @@
         "laravel/ui": "^3.2"
     },
     "require-dev": {
+        "ext-fileinfo": "*",
+        "ext-json": "*",
         "barryvdh/laravel-debugbar": "^3.5",
         "barryvdh/laravel-ide-helper": "^2.9",
         "codeception/codeception": "^4.1",

@@ -28,7 +28,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           tools: composer:v2
-          extensions: ctype, iconv, intl, json, mbstring, pdo, pdo_sqlite
+          extensions: ctype, iconv, intl, json, mbstring, pdo, pdo_sqlite, fileinfo
         env:
           update: true
 

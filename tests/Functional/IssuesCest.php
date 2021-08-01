@@ -30,7 +30,7 @@ final class IssuesCest
             ]
         ];
         $response = $I->submitFiles($files);
-        $I->assertEquals($example['expected_response'], $response);
+        $I->assertSame($example['expected_response'], $response);
     }
 
     /**

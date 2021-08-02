@@ -18,6 +18,8 @@ final class IssuesCest
      */
     public function submitArrayTestFiles(FunctionalTester $I, Example $example)
     {
+        // disable CSRF check
+        $I->disableMiddleware();
         $fileName = self::TEST_UPLOADED_FILE_NAME;
         $filePath = codecept_data_dir($fileName);
         $files = [
@@ -39,6 +41,8 @@ final class IssuesCest
      */
     public function submitUploadedFileTestFiles(FunctionalTester $I, Example $example)
     {
+        // disable CSRF check
+        $I->disableMiddleware();
         $fileName = self::TEST_UPLOADED_FILE_NAME;
         $filePath = codecept_data_dir($fileName);
         $files = [

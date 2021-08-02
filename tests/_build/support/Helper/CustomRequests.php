@@ -13,7 +13,7 @@ final class CustomRequests extends Module
     {
         /** @var Laravel $laravelModule */
         $laravelModule = $this->getModule('Laravel');
-        $response = $laravelModule->_request('POST', '/upload-files', [], $files);
+        $response = $laravelModule->_request('POST', '/api/upload-files', [], $files);
         $response = json_decode($response, true);
 
         $last_error = json_last_error();

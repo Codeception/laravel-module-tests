@@ -52,4 +52,4 @@ jobs:
           php artisan config:cache
           touch database/database.sqlite
           php artisan migrate --seed --env=testing --force
-          vendor/bin/codecept run Functional
+          vendor/bin/codecept run Functional -d

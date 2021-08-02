@@ -14,6 +14,13 @@ final class CustomRequests extends Module
         /** @var Laravel $laravelModule */
         $laravelModule = $this->getModule('Laravel');
         $response = $laravelModule->_request('POST', '/upload-files', [], $files);
-        return json_decode($response, true);
+        $response = json_decode($response, true);
+
+        $last_error = json_last_error();
+        if ($last_error !== JSON_ERROR_NONE) {
+            $this->fail("Failed to parse response from uploaded-files endpoint with json error code {$last_error}");
+        }
+
+        return $response;
     }
 }

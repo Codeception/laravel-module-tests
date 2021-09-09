@@ -101,7 +101,7 @@ final class EloquentCest
     {
         User::query()->delete();
         $I->seeNumRecords(0,User::class);
-        $I->seedDatabase();
+        $I->seedDatabase("Database\Seeders\DatabaseSeeder");
         $I->seeNumRecords(1,User::class);
     }
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df2c4c0df167225b634654b9f64822a7",
+    "content-hash": "8ea2f9bee9d3b81466a1db021a34cd1c",
     "packages": [
         {
             "name": "brick/math",
@@ -4767,12 +4767,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/module-laravel.git",
-                "reference": "c9ae1556119b2bd411b80dd55b8fe60df96c42b9"
+                "reference": "6affb71b3d98b78b51cf680305960350540d8981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/module-laravel/zipball/c9ae1556119b2bd411b80dd55b8fe60df96c42b9",
-                "reference": "c9ae1556119b2bd411b80dd55b8fe60df96c42b9",
+                "url": "https://api.github.com/repos/Codeception/module-laravel/zipball/6affb71b3d98b78b51cf680305960350540d8981",
+                "reference": "6affb71b3d98b78b51cf680305960350540d8981",
                 "shasum": ""
             },
             "require": {
@@ -4819,7 +4819,7 @@
                 "issues": "https://github.com/Codeception/module-laravel/issues",
                 "source": "https://github.com/Codeception/module-laravel/tree/main"
             },
-            "time": "2021-09-09T18:34:02+00:00"
+            "time": "2021-09-09T21:39:39+00:00"
         },
         {
             "name": "codeception/phpunit-wrapper",

@@ -17,7 +17,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController');
 
-Route::get('/session/{message}', 'TestController@session');
 Route::get('/fire-event', 'TestController@fireEvent');
 Route::get('/test-value', 'TestController@testValue')->name('test-value');
 Route::get('/service-container',  function () {

@@ -99,7 +99,10 @@ final class EloquentCest
 
     public function seedDatabase(FunctionalTester $I)
     {
-        // TODO
+        User::query()->delete();
+        $I->seeNumRecords(0,User::class);
+        $I->seedDatabase("Database\Seeders\DatabaseSeeder");
+        $I->seeNumRecords(1,User::class);
     }
 
     public function seeNumRecords(FunctionalTester $I)

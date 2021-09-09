@@ -10,11 +10,6 @@ use Illuminate\Http\UploadedFile;
 
 final class TestController
 {
-    public function session(Request $request, string $message): void
-    {
-        $request->session()->put('message', $message);
-    }
-
     public function fireEvent(): void
     {
         TestEvent::dispatch();

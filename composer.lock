@@ -433,16 +433,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.59.0",
+            "version": "v8.60.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "51d4755cc6232e7f8abb437567d713fa37661da2"
+                "reference": "44f16a31a1d4ac8a51605550d7796e2273984a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/51d4755cc6232e7f8abb437567d713fa37661da2",
-                "reference": "51d4755cc6232e7f8abb437567d713fa37661da2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/44f16a31a1d4ac8a51605550d7796e2273984a48",
+                "reference": "44f16a31a1d4ac8a51605550d7796e2273984a48",
                 "shasum": ""
             },
             "require": {
@@ -597,7 +597,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-09-07T13:29:53+00:00"
+            "time": "2021-09-08T13:37:21+00:00"
         },
         {
             "name": "laravel/ui",
@@ -4767,12 +4767,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/module-laravel.git",
-                "reference": "15df459bf5a3ab38129af0f1a9ded2b75b9f787a"
+                "reference": "c9ae1556119b2bd411b80dd55b8fe60df96c42b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/module-laravel/zipball/15df459bf5a3ab38129af0f1a9ded2b75b9f787a",
-                "reference": "15df459bf5a3ab38129af0f1a9ded2b75b9f787a",
+                "url": "https://api.github.com/repos/Codeception/module-laravel/zipball/c9ae1556119b2bd411b80dd55b8fe60df96c42b9",
+                "reference": "c9ae1556119b2bd411b80dd55b8fe60df96c42b9",
                 "shasum": ""
             },
             "require": {
@@ -4819,7 +4819,7 @@
                 "issues": "https://github.com/Codeception/module-laravel/issues",
                 "source": "https://github.com/Codeception/module-laravel/tree/main"
             },
-            "time": "2021-09-07T22:25:11+00:00"
+            "time": "2021-09-09T18:34:02+00:00"
         },
         {
             "name": "codeception/phpunit-wrapper",

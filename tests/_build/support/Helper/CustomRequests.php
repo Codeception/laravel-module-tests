@@ -7,7 +7,6 @@ namespace Tests\Helper;
 use Codeception\Module;
 use Codeception\Module\Laravel;
 use JsonException;
-use Throwable;
 
 final class CustomRequests extends Module
 {

@@ -13,12 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class RedirectIfAuthenticated
 {
-    /**
-     * @param Request $request
-     * @param Closure $next
-     * @param string|null ...$guards
-     * @return Response
-     */
+    /** @param string|null ...$guards */
     public function handle(Request $request, Closure $next, ...$guards): Response
     {
         $auth = app()->get(Auth::class);

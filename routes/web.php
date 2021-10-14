@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Route;
 
 // Web Routes
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/',
+    fn() => view('welcome')
+)->name('index');
 
 Auth::routes();
 
@@ -19,6 +19,6 @@ Route::get('/home', HomeController::class);
 
 Route::get('/fire-event', [TestController::class, 'fireEvent']);
 Route::get('/test-value', [TestController::class, 'testValue'])->name('test-value');
-Route::get('/service-container',  function () {
-    return view('utils/service-container');
-});
+Route::get('/service-container',
+    fn() => view('utils/service-container')
+);

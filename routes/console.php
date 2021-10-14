@@ -7,6 +7,6 @@ use Illuminate\Support\Facades\Artisan;
 
 // Console Routes
 
-Artisan::command('inspire', function () {
+Artisan::command('inspire', function (): void {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');

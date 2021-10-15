@@ -11,7 +11,7 @@ final class CreateFailedJobsTable extends Migration
     public function up(): void
     {
         $schema = app()->get(Schema::class);
-        $schema->create('failed_jobs', function (Blueprint $table) {
+        $schema->create('failed_jobs', function (Blueprint $table): void {
             $table->bigIncrements('id');
             $table->text('connection');
             $table->text('queue');

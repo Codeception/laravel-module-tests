@@ -12,8 +12,7 @@ final class LoginController extends AbstractController
 {
     use AuthenticatesUsers;
 
-    /** @var string */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::HOME;
 
     public function __construct()
     {

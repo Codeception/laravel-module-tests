@@ -12,8 +12,7 @@ final class ConfirmPasswordController extends AbstractController
 {
     use ConfirmsPasswords;
 
-    /** @var string */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::HOME;
 
     public function __construct()
     {

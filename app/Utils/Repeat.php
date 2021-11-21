@@ -9,8 +9,7 @@ use function str_repeat;
 
 final class Repeat implements StringConverterInterface
 {
-    /** @var int */
-    private $times;
+    private int $times;
 
     public function __construct(int $times)
     {

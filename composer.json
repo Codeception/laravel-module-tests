@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.3.0",
+        "php": ">=7.4.0",
         "ext-pdo": "*",
         "laravel/framework": "^8.60",
         "laravel/ui": "^3.3"
@@ -33,7 +33,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "7.3.0"
+            "php": "7.4.0"
         }
     },
     "extra": {

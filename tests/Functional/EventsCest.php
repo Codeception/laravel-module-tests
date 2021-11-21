@@ -27,9 +27,7 @@ final class EventsCest
             'password' => 'password',
         ]);
 
-        User::saving(function () {
-            return false;
-        });
+        User::saving(fn() => false);
 
         $I->disableModelEvents();
 

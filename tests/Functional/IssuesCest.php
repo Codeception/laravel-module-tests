@@ -10,7 +10,7 @@ use Tests\FunctionalTester;
 
 final class IssuesCest
 {
-    const TEST_UPLOADED_FILE_NAME = 'potato.jpg';
+    public const TEST_UPLOADED_FILE_NAME = 'potato.jpg';
 
     /**
      * @dataProvider fileProvider

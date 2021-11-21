@@ -65,7 +65,7 @@ class User extends BaseUser
         return $this->name;
     }
 
-    public function setName(string $name): User
+    public function setName(string $name): self
     {
         $this->name = $name;
         return $this;
@@ -76,7 +76,7 @@ class User extends BaseUser
         return $this->email;
     }
 
-    public function setEmail(string $email): User
+    public function setEmail(string $email): self
     {
         $this->email = $email;
         return $this;
@@ -87,7 +87,7 @@ class User extends BaseUser
         return $this->password;
     }
 
-    public function setPassword(string $password): User
+    public function setPassword(string $password): self
     {
         $this->password = $password;
         return $this;
@@ -98,7 +98,7 @@ class User extends BaseUser
         return $this->email_verified_at;
     }
 
-    public function setEmailVerifiedAt(Carbon $verifiedDate): User
+    public function setEmailVerifiedAt(Carbon $verifiedDate): self
     {
         $this->email_verified_at = $verifiedDate;
         return $this;

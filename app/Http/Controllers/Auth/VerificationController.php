@@ -12,8 +12,7 @@ final class VerificationController extends AbstractController
 {
     use VerifiesEmails;
 
-    /** @var string */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::HOME;
 
     public function __construct()
     {

@@ -11,7 +11,7 @@ final class CreatePasswordResetsTable extends Migration
     public function up(): void
     {
         $schema = app()->get(Schema::class);
-        $schema->create('password_resets', function (Blueprint $table) {
+        $schema->create('password_resets', function (Blueprint $table): void {
             $table->string('email')->index();
             $table->string('token');
             $table->timestamp('created_at')->nullable();

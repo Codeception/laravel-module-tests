@@ -12,6 +12,5 @@ final class ResetPasswordController extends AbstractController
 {
     use ResetsPasswords;
 
-    /** @var string */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::HOME;
 }

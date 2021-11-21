@@ -9,15 +9,13 @@ use Illuminate\Support\Str;
 
 // Model Factories
 
-$attributes = function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => 'secret',
-        'remember_token' => Str::random(10),
-    ];
-};
+$attributes = fn(Faker $faker) => [
+    'name' => $faker->name,
+    'email' => $faker->unique()->safeEmail,
+    'email_verified_at' => now(),
+    'password' => 'secret',
+    'remember_token' => Str::random(10),
+];
 
 /** @var Factory $factory */
 

@@ -12,6 +12,7 @@
 .phpunit.result.cache
 .phpstorm.meta.php
 _ide_helper.php
+composer.lock
 Homestead.json
 Homestead.yaml
 npm-debug.log

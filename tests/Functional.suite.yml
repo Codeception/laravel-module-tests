@@ -4,4 +4,7 @@ modules:
     - Asserts
     - Laravel:
         environment_file: .env.testing
+        headers:
+          Authorization: "Bearer XXX"
+          Foo: Bar
     - \Tests\Helper\CustomRequests

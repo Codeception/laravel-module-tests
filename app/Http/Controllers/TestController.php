@@ -22,6 +22,17 @@ final class TestController
         return 'Test value is: ' . $config->get('test_value');
     }
 
+    public function testHeaders(Request $request): string
+    {
+        $result = '';
+
+        foreach ($request->headers->all() as $key => $value) {
+            $result .= $key . ': ' . $value[0] . "\n";
+        }
+
+        return $result;
+    }
+
     /** @return array<string, array<bool|int>> */
     public function uploadFiles(Request $request): array
     {

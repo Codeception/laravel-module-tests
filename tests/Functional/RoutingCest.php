@@ -25,11 +25,13 @@ final class RoutingCest
     {
         $I->amOnPage('/test-value');
         $I->seeCurrentActionIs(TestController::class. '@testValue');
+        $I->see('Test value is: ' . config('test_value'));
     }
 
     public function seeCurrentRouteIs(FunctionalTester $I)
     {
         $I->amOnAction(TestController::class. '@testValue');
         $I->seeCurrentRouteIs('test-value');
+        $I->see('Test value is: ' . config('test_value'));
     }
 }

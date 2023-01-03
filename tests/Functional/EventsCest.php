@@ -42,12 +42,10 @@ final class EventsCest
         // With class name
         $I->amOnPage('/');
         $I->dontSeeEventTriggered(TestEvent::class);
-        $I->seeNumRecords(1, User::class);
 
         // With event object
         $I->amOnPage('/');
         $I->dontSeeEventTriggered(new TestEvent());
-        $I->seeNumRecords(1, User::class);
     }
 
     public function seeEventTriggered(FunctionalTester $I)

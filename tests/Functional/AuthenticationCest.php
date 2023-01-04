@@ -83,10 +83,8 @@ final class AuthenticationCest
             'email' => 'john_doe@gmail.com',
             'password' => '123456'
         ]);
-        $I->amOnPage('/home');
-        $I->click('#logout');
-        $I->amOnPage('/');
-        $I->seeAuthentication();
+        $I->logout();
+        $I->dontSeeAuthentication();
     }
 
     public function seeAuthentication(FunctionalTester $I)

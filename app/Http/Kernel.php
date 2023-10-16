@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http;
 
+use App\Http\Middleware\ApiAfter;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
@@ -50,6 +51,7 @@ final class Kernel extends HttpKernel
         'api' => [
             'throttle:api',
             SubstituteBindings::class,
+            ApiAfter::class,
         ],
     ];
 

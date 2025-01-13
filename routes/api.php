@@ -12,4 +12,5 @@ Route::middleware('auth:api')->get('/user',
     fn(Request $request) => $request->user()
 );
 
+Route::get('/ping', fn(Request $request) => 'pong');
 Route::post('/upload-files', [TestController::class, 'uploadFiles']);

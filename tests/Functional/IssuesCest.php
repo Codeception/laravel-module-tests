@@ -13,6 +13,16 @@ final class IssuesCest
     public const TEST_UPLOADED_FILE_NAME = 'potato.jpg';
 
     /**
+     * @see https://github.com/Codeception/laravel-module-tests/pull/17
+     */
+    public function headersFromConfigurationAreUsed(FunctionalTester $I)
+    {
+        $I->amOnPage('/test-headers');
+        $I->see('authorization: Bearer XXX');
+        $I->see('foo: Bar');
+    }
+
+    /**
      * @dataProvider fileProvider
      * @see https://github.com/Codeception/Codeception/pull/3417
      */

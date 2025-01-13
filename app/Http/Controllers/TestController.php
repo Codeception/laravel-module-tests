@@ -24,13 +24,9 @@ final class TestController
 
     public function testHeaders(Request $request): string
     {
-        $result = '';
-
-        foreach ($request->headers->all() as $key => $value) {
-            $result .= $key . ': ' . $value[0] . "\n";
-        }
-
-        return $result;
+        return collect($request->headers->all())
+            ->map(fn($value, $key) => "$key: $value[0]")
+            ->implode("\n");
     }
 
     /** @return array<string, array<bool|int>> */

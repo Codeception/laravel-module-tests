@@ -37,6 +37,15 @@ Then, go to the project directory and run:
 vendor/bin/codecept run Functional
 ```
 
+### Navigate the application locally through a web browser
+
+If for any reason you want to run the Laravel app in a browser, you should compile the assets:
+
+```shell
+yarn install
+yarn run dev
+```
+
 ### Create Unit Suite or Acceptance Suite
 
 To create [Unit Tests](https://codeception.com/docs/05-UnitTests) or [Acceptance Tests](https://codeception.com/docs/03-AcceptanceTests), you need to create the corresponding suite first:

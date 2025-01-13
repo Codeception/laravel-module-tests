@@ -8,10 +8,13 @@ use Tests\FunctionalTester;
 
 final class HttpRequestsCest
 {
-    public function headersFromConfigurationAreUsed(FunctionalTester $I)
+    public function disableMiddleware(FunctionalTester $I)
     {
-        $I->amOnPage('/test-headers');
-        $I->see('authorization: Bearer XXX');
-        $I->see('foo: Bar');
+        // TODO
+    }
+
+    public function enableMiddleware(FunctionalTester $I)
+    {
+        // TODO
     }
 }

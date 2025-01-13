@@ -6,7 +6,7 @@ return [
 
     // Default Filesystem Disk
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DISK', 'local'),
 
     // Filesystem Disks
 

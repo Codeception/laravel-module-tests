@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "php": ">=8.0.1",
+        "php": ">=8.1",
         "ext-pdo": "*",
-        "laravel/framework": "^9.0",
-        "laravel/ui": "^3.4"
+        "laravel/framework": "^10.0",
+        "laravel/ui": "^4.0"
     },
     "require-dev": {
         "ext-fileinfo": "*",
@@ -24,8 +24,8 @@
         "codeception/module-asserts": "^3.0",
         "codeception/module-laravel": "^3.0 | *@dev",
         "fakerphp/faker": "^1.24",
-        "nunomaduro/collision": "^v6.4",
-        "spatie/laravel-ignition": "^1.7"
+        "nunomaduro/collision": "^7.0",
+        "spatie/laravel-ignition": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,

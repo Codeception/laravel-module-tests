@@ -3,22 +3,22 @@ name: CI
 on:
   push:
     branches:
-      - '9.x'
+      - '10.x'
   pull_request:
     branches:
-      - '9.x'
+      - '10.x'
 
 env:
   APP_ENV: test
 
 jobs:
   laravel:
-    name: Laravel 9 (PHP ${{ matrix.php-versions }})
+    name: Laravel 10 (PHP ${{ matrix.php-versions }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
-        php-versions: ['8.0', '8.1', '8.2']
+        php-versions: ['8.1', '8.2', '8.3']
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

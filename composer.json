@@ -12,14 +12,14 @@
     "require": {
         "php": ">=8.2",
         "ext-pdo": "*",
-        "laravel/framework": "^11.0",
+        "laravel/framework": "^12.0",
         "laravel/ui": "^4.0"
     },
     "require-dev": {
         "ext-fileinfo": "*",
         "ext-json": "*",
         "barryvdh/laravel-debugbar": "^3.14",
-        "barryvdh/laravel-ide-helper": "^3.5",
+        "barryvdh/laravel-ide-helper": "^3.6",
         "codeception/codeception": "^5.0.8",
         "codeception/module-asserts": "^3.0",
         "codeception/module-laravel": "^3.0 | *@dev",

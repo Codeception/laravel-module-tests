@@ -3,17 +3,17 @@ name: CI
 on:
   push:
     branches:
-      - '11.x'
+      - '12.x'
   pull_request:
     branches:
-      - '11.x'
+      - '12.x'
 
 env:
   APP_ENV: test
 
 jobs:
   laravel:
-    name: Laravel 11 (PHP ${{ matrix.php-versions }})
+    name: Laravel 12 (PHP ${{ matrix.php-versions }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
